@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'CaasLibrary_Example' do
+  pod 'CaasLibrary', :path => '../'
+
+  target 'CaasLibrary_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
