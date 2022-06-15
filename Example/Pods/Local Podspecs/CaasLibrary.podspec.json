@@ -1,0 +1,22 @@
+{
+  "name": "CaasLibrary",
+  "version": "0.1.0",
+  "summary": "A short description of CaasLibrary.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Yordanka Getsova/CaasLibrary",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Yordanka Getsova": "ygetsova@evolutionit.bg"
+  },
+  "source": {
+    "git": "https://github.com/Yordanka Getsova/CaasLibrary.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "CaasLibrary/Classes/**/*"
+}

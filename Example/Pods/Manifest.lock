@@ -1,0 +1,16 @@
+PODS:
+  - CaasLibrary (0.1.0)
+
+DEPENDENCIES:
+  - CaasLibrary (from `../`)
+
+EXTERNAL SOURCES:
+  CaasLibrary:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CaasLibrary: 78b2213f09f94494471ecf4f85820e4868d4c11e
+
+PODFILE CHECKSUM: 916f4f19e0d632399909eb7a180ae6a3434cec39
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,6 @@
+framework module CaasLibrary {
+  umbrella header "CaasLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}
