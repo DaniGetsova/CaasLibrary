@@ -1,0 +1,11 @@
+framework module CaasFramework {
+  umbrella header "CaasFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module CaasFramework.Swift {
+    header "CaasFramework-Swift.h"
+    requires objc
+}

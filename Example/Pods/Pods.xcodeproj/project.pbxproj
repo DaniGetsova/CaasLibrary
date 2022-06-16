@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24E3F2B352A92D40A108AED19F006E44 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263733B81A319E93661760F8AC3EB8B4 /* ReplaceMe.swift */; };
 		309D6C37E04BD8FB4CB3C8AFBC65736E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		4F3F0C677C7238F9066886797C8345E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		5510B87CF01DDDBC3E05FCE5930FEE3E /* CaasLibrary-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D026D7B7BEAEFA21EB2827F5842796FD /* CaasLibrary-dummy.m */; };
 		687868E9E83348CB89B1FA096C0839D7 /* CaasLibrary-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E92E23F3914D652354F16D0FEC71FA17 /* CaasLibrary-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DC9B5F3E35BBB25C025576295CBD497 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8D68943E2859F86600AD6AE5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68943D2859F86600AD6AE5 /* API.swift */; };
+		8D6894402859F86F00AD6AE5 /* TokenDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D68943F2859F86F00AD6AE5 /* TokenDecoder.swift */; };
 		96BDDB732D18D2021E380298C412D0C0 /* Pods-CaasLibrary_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EB851AA1AFD199D1CFA3CA27FBB860A /* Pods-CaasLibrary_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B76FB6BB4102AEA1486E5BF3D7914954 /* Pods-CaasLibrary_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F3D1B9D8702646AACA0BCDCB4D46C1 /* Pods-CaasLibrary_Tests-dummy.m */; };
 		D54B1FE0193AD8E40AF63FD951368E07 /* Pods-CaasLibrary_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B942B1BE3D34BAFDC143D9C9293BCC9 /* Pods-CaasLibrary_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,9 +40,8 @@
 /* Begin PBXFileReference section */
 		0B97662E8A96CF6F8A43E88ED9DC78EA /* CaasLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CaasLibrary.release.xcconfig; sourceTree = "<group>"; };
 		1B942B1BE3D34BAFDC143D9C9293BCC9 /* Pods-CaasLibrary_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CaasLibrary_Example-umbrella.h"; sourceTree = "<group>"; };
-		215E18BF2DB68B4859237782499C89D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		21C0446254AEF784C18B5A088DC959B5 /* CaasLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CaasLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		263733B81A319E93661760F8AC3EB8B4 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = CaasLibrary/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		215E18BF2DB68B4859237782499C89D5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		21C0446254AEF784C18B5A088DC959B5 /* CaasLibrary.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CaasLibrary.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2FD769F3E785E7BEDE6B6146DCC787F7 /* CaasLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CaasLibrary.modulemap; sourceTree = "<group>"; };
 		347043196FE987C796CE5A21144FA5D6 /* Pods-CaasLibrary_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CaasLibrary_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		44DDB23C1F09D0B720E7C8D6BA2294F7 /* Pods-CaasLibrary_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CaasLibrary_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -53,23 +53,25 @@
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73F29697FF9AD1E7A38DA3BD852A25AC /* Pods-CaasLibrary_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CaasLibrary_Example-Info.plist"; sourceTree = "<group>"; };
 		7EB851AA1AFD199D1CFA3CA27FBB860A /* Pods-CaasLibrary_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CaasLibrary_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8D68943D2859F86600AD6AE5 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8D68943F2859F86F00AD6AE5 /* TokenDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDecoder.swift; sourceTree = "<group>"; };
 		99CA3C9EC40EE3607CD5C2FF43AA6316 /* Pods-CaasLibrary_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CaasLibrary_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9AB31287DCFCC68D5CD87B9E865F81CF /* CaasLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CaasLibrary-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AACFAE4DBB16EDA32B2E5A121D2503C8 /* Pods-CaasLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CaasLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7062AF010953C775F4693D231E96E86 /* Pods-CaasLibrary_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CaasLibrary_Example.modulemap"; sourceTree = "<group>"; };
 		B8408A2CA216F0CBF658F39ACF679120 /* Pods-CaasLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CaasLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C5DDD80D8432DF934BC2C0AEA555105F /* CaasLibrary-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CaasLibrary-prefix.pch"; sourceTree = "<group>"; };
-		C99F0581522CDC01E5B2ADA02C71E69A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C99F0581522CDC01E5B2ADA02C71E69A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D026D7B7BEAEFA21EB2827F5842796FD /* CaasLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CaasLibrary-dummy.m"; sourceTree = "<group>"; };
-		DC50882BAEA4A6E41F3ED270550FF62D /* CaasLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CaasLibrary.framework; path = CaasLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD28350A7DEADA922FCD91A65C730D07 /* Pods_CaasLibrary_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CaasLibrary_Example.framework; path = "Pods-CaasLibrary_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC50882BAEA4A6E41F3ED270550FF62D /* CaasLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CaasLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD28350A7DEADA922FCD91A65C730D07 /* Pods_CaasLibrary_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaasLibrary_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB281B22A74133C4D4323ECC5E7887B /* Pods-CaasLibrary_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CaasLibrary_Example-frameworks.sh"; sourceTree = "<group>"; };
 		E92E23F3914D652354F16D0FEC71FA17 /* CaasLibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CaasLibrary-umbrella.h"; sourceTree = "<group>"; };
 		EAA34F683CE676375D8949762709F794 /* Pods-CaasLibrary_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CaasLibrary_Tests.modulemap"; sourceTree = "<group>"; };
 		EB9972BCF10F7ACA4C21820B185D56FD /* CaasLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CaasLibrary.debug.xcconfig; sourceTree = "<group>"; };
 		F3F3D1B9D8702646AACA0BCDCB4D46C1 /* Pods-CaasLibrary_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CaasLibrary_Tests-dummy.m"; sourceTree = "<group>"; };
-		FAEC02AB2CA9585E673381F517F0B641 /* Pods_CaasLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CaasLibrary_Tests.framework; path = "Pods-CaasLibrary_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAEC02AB2CA9585E673381F517F0B641 /* Pods_CaasLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaasLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,15 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/CaasLibrary";
+			sourceTree = "<group>";
+		};
+		8D68943C2859F75100AD6AE5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8D68943F2859F86F00AD6AE5 /* TokenDecoder.swift */,
+				8D68943D2859F86600AD6AE5 /* API.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		93CFC732A29E4127B4653E8A5216B1C1 /* Pod */ = {
@@ -215,7 +226,7 @@
 		FA858EE333B8C65EDA78449F1AD376E0 /* CaasLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				263733B81A319E93661760F8AC3EB8B4 /* ReplaceMe.swift */,
+				8D68943C2859F75100AD6AE5 /* Source */,
 				93CFC732A29E4127B4653E8A5216B1C1 /* Pod */,
 				7558A49B285F22A628F0E9A78C526DB2 /* Support Files */,
 			);
@@ -316,7 +327,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					733D23E939968F023272B713779F41F4 = {
+						LastSwiftMigration = 1330;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -375,8 +391,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D6894402859F86F00AD6AE5 /* TokenDecoder.swift in Sources */,
 				5510B87CF01DDDBC3E05FCE5930FEE3E /* CaasLibrary-dummy.m in Sources */,
-				24E3F2B352A92D40A108AED19F006E44 /* ReplaceMe.swift in Sources */,
+				8D68943E2859F86600AD6AE5 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +438,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CaasLibrary_Example/Pods-CaasLibrary_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CaasLibrary_Example/Pods-CaasLibrary_Example.modulemap";
@@ -453,15 +470,16 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CaasLibrary/CaasLibrary-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CaasLibrary/CaasLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CaasLibrary/CaasLibrary.modulemap";
 				PRODUCT_MODULE_NAME = CaasLibrary;
 				PRODUCT_NAME = CaasLibrary;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -522,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -550,15 +568,16 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CaasLibrary/CaasLibrary-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CaasLibrary/CaasLibrary-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CaasLibrary/CaasLibrary.modulemap";
 				PRODUCT_MODULE_NAME = CaasLibrary;
 				PRODUCT_NAME = CaasLibrary;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -580,7 +599,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CaasLibrary_Tests/Pods-CaasLibrary_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CaasLibrary_Tests/Pods-CaasLibrary_Tests.modulemap";
@@ -613,7 +632,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CaasLibrary_Tests/Pods-CaasLibrary_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CaasLibrary_Tests/Pods-CaasLibrary_Tests.modulemap";
@@ -645,7 +664,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CaasLibrary_Example/Pods-CaasLibrary_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CaasLibrary_Example/Pods-CaasLibrary_Example.modulemap";
@@ -713,13 +732,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
